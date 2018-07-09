@@ -6,8 +6,6 @@ release_files
 .DS_Store
 test_files/grbl_*.hex.txt
 target/
-target/*
-/target/
 .metadata
 tar.gz
 .classpath
