@@ -77,7 +77,8 @@ import java.awt.AWTException;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
-
+import java.io.*;
+import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -208,6 +209,28 @@ implements KeyListener, ControllerListener, ControlStateListener {
         });
     }
     
+    // Sends ping request to a provided IP address
+	public static boolean sendPingRequest(String ipAddress) {
+		InetAddress geek;
+		try {
+			geek = InetAddress.getByName(ipAddress);
+
+			// System.out.println("Sending Ping Request to " + ipAddress);
+			if (geek.isReachable(5000))
+				return true;
+			else
+				return false;
+		} catch (UnknownHostException e) {
+ 
+			e.printStackTrace();
+		} catch (IOException e) {
+ 
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+
     /**
      * @param args the command line arguments
      */
@@ -292,7 +315,7 @@ implements KeyListener, ControllerListener, ControlStateListener {
         });
         
         mw.initFileChooser();
-        
+       
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
@@ -315,6 +338,10 @@ implements KeyListener, ControllerListener, ControlStateListener {
                 }
             }
         });
+
+
+
+
     }
 
     /** This method is called from within the constructor to
@@ -1482,6 +1509,42 @@ implements KeyListener, ControllerListener, ControlStateListener {
         );
 
         pack();
+
+
+		 Thread t = new Thread(new Runnable() {
+
+					@Override
+					public void run() {
+						while(true) {
+							String ipAddress = "127.0.0.1";
+							System.out.println(ipAddress+ " " +sendPingRequest(ipAddress) +" "+ System.currentTimeMillis());
+
+							//if the ping to the thing is false then click the button twice
+							if(!sendPingRequest(ipAddress)){
+								opencloseButton.doClick();
+								try {
+									Thread.sleep(20);
+								} catch (InterruptedException e) {
+									e.printStackTrace();
+								}
+								opencloseButton.doClick();
+							}
+
+							try {
+								Thread.sleep(100);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+						}
+
+					}
+				});
+
+				t.start();
+
+
+
+
     }// </editor-fold>//GEN-END:initComponents
     /** End of generated code.
      */
