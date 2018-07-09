@@ -1,0 +1,12 @@
+com\willwinder\universalgcodesender\pendantui\PendantUITest$MockUGSController.class
+com\willwinder\universalgcodesender\CommUtilsTest.class
+com\willwinder\universalgcodesender\GrblUtilsTest.class
+com\willwinder\universalgcodesender\mockobjects\MockConnection.class
+com\willwinder\universalgcodesender\pendantui\PendantUITest.class
+com\willwinder\universalgcodesender\UtilsTest.class
+com\willwinder\universalgcodesender\GcodePreprocessorUtilsTest.class
+com\willwinder\universalgcodesender\mockobjects\MockGrblCommunicator.class
+com\willwinder\universalgcodesender\pendantui\PendantUITest$MockMainWindow.class
+com\willwinder\universalgcodesender\GrblControllerTest.class
+com\willwinder\universalgcodesender\mockobjects\MockGrbl.class
+com\willwinder\universalgcodesender\GrblCommunicatorTest.class
