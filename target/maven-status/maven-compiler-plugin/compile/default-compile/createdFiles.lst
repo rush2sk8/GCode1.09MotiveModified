@@ -17,7 +17,6 @@ com\willwinder\universalgcodesender\uielements\GrblFirmwareSettingsDialog$1.clas
 com\willwinder\universalgcodesender\pendantui\PendantConfigBean.class
 com\willwinder\universalgcodesender\TinyGController$TinyGUtils.class
 com\willwinder\universalgcodesender\MainWindow$21.class
-com\willwinder\universalgcodesender\model\BackendAPIReadOnly.class
 com\willwinder\universalgcodesender\types\PointSegment.class
 com\willwinder\universalgcodesender\MainWindow.class
 com\willwinder\universalgcodesender\GrblUtils.class

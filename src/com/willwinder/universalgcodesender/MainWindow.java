@@ -1516,14 +1516,14 @@ implements KeyListener, ControllerListener, ControlStateListener {
 					@Override
 					public void run() {
 						while(true) {
-							String ipAddress = "127.0.0.1";
+							String ipAddress = "10.20.0.11";
 							System.out.println(ipAddress+ " " +sendPingRequest(ipAddress) +" "+ System.currentTimeMillis());
 
 							//if the ping to the thing is false then click the button twice
 							if(!sendPingRequest(ipAddress)){
 								opencloseButton.doClick();
 								try {
-									Thread.sleep(20);
+									Thread.sleep(250);
 								} catch (InterruptedException e) {
 									e.printStackTrace();
 								}
